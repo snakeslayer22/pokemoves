@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6ebcda6c8a57a18439f1938770f7ef58
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pfItemWorld: {fileID: 4759623688691864954, guid: 1b0a392593c8272408a1856793a830cd,
+      type: 3}
+  - swordSprite: {fileID: 21300000, guid: 72254a8a7d398f048b431dffb614655f, type: 3}
+  - healthPosionSprite: {fileID: 21300000, guid: 36c8ad17c439a4a4bb116d4004fac383,
+      type: 3}
+  - manaPosionSprite: {fileID: 21300000, guid: 4bb5a24ea0144e4448f46e65a2ae35ea, type: 3}
+  - coinSprite: {fileID: 21300000, guid: 0827c6acb7dc2664e939711da739e952, type: 3}
+  - medKitSprite: {fileID: 21300000, guid: d093f5aa2ee39254cbe36cdc93311a1e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
