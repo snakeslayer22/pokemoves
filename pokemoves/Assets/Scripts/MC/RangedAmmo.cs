@@ -12,8 +12,6 @@ public class RangedAmmo : MonoBehaviour{
 
     private LayerMask enemy = 8;
 
-    private SpriteRenderer spriteRenderer;
-
     private Transform shootPoint;
 
     void Start()
@@ -39,13 +37,11 @@ public class RangedAmmo : MonoBehaviour{
         {
             rb.velocity = new Vector3(0, -shootSpeed, 0);
         }
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void updateSpriteRenderer(Sprite sprite)
     {
-        spriteRenderer.sprite = sprite;
+        transform.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
     void Update()

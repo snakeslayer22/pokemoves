@@ -20,6 +20,9 @@ public class Item {
         Gun,
         Bomb,
         QuickKnife,
+        Arrow,
+        magic,
+        bullet,
     }
 
     public ItemType itemType;
@@ -43,6 +46,9 @@ public class Item {
             case ItemType.Gun: return ItemAssets.Instance.holdGunSprite;
             case ItemType.Bomb: return ItemAssets.Instance.holdBombSprite;
             case ItemType.QuickKnife: return ItemAssets.Instance.holdQuickKnifeSprite;
+            case ItemType.Arrow: return ItemAssets.Instance.arrowSprite;
+            case ItemType.magic: return ItemAssets.Instance.magicSprite;
+            case ItemType.bullet: return ItemAssets.Instance.bulletSprite;
         }
     }
 
@@ -63,6 +69,9 @@ public class Item {
             case ItemType.Coin:
             case ItemType.HealthPosion:
             case ItemType.ManaPosion:
+            case ItemType.Arrow:
+            case ItemType.magic:
+            case ItemType.bullet:
                 return true;
             case ItemType.Sword:
             case ItemType.MedKit:
@@ -87,6 +96,9 @@ public class Item {
             case ItemType.ManaPosion:
             case ItemType.Coin:
             case ItemType.MedKit:
+            case ItemType.Arrow:
+            case ItemType.magic:
+            case ItemType.bullet:
                 return false;
             case ItemType.Sword:
             case ItemType.Bow:
@@ -110,6 +122,9 @@ public class Item {
             case ItemType.ManaPosion:
             case ItemType.Coin:
             case ItemType.MedKit:
+            case ItemType.Arrow:
+            case ItemType.magic:
+            case ItemType.bullet:
             case ItemType.Mase:
             case ItemType.QuickKnife:
             case ItemType.Sword:

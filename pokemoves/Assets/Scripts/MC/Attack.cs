@@ -36,6 +36,7 @@ public class Attack : MonoBehaviour{
     private bool allowRotationOnce = false;
 
     public GameObject rangedAmmo;
+    public GameObject bomb;
     public Transform shootPoint;
 
     private void Start()
@@ -80,11 +81,26 @@ public class Attack : MonoBehaviour{
                     rotationAllowed = true;
                     allowRotationOnce = true;
                 }
-                else if (down) {
+                else if (down)
+                {
                     rotationAllowed = true;
                     allowRotationOnce = true;
-                };
+                }
                 Shoot();
+            }
+            else if(MCAttackRange == 72)
+            {
+                if (up)
+                {
+                    rotationAllowed = true;
+                    allowRotationOnce = true;
+                }
+                else if (down)
+                {
+                    rotationAllowed = true;
+                    allowRotationOnce = true;
+                }
+                Bomba();
             }
 
             ArmsAnimator.SetTrigger("Attack");
@@ -174,8 +190,29 @@ public class Attack : MonoBehaviour{
     {
         if(MCdamage == 1.25f) //bow
         {
-            Instantiate(rangedAmmo, shootPoint.position, Quaternion.identity);
+            Instantiate(rangedAmmo, shootPoint.position, Quaternion.identity).GetComponent<RangedAmmo>().updateSpriteRenderer(ItemAssets.Instance.arrowSprite);
         }
+        else if(MCdamage == 1.75f) //wand
+        {
+            Instantiate(rangedAmmo, shootPoint.position, Quaternion.identity).GetComponent<RangedAmmo>().updateSpriteRenderer(ItemAssets.Instance.magicSprite);
+        }
+        else if(MCdamage == 6) //gun
+        {
+            Instantiate(rangedAmmo, shootPoint.position, Quaternion.identity).GetComponent<RangedAmmo>().updateSpriteRenderer(ItemAssets.Instance.bulletSprite);
+        }
+
+        canAttack = false;
+        IEnumerator coroutine = waitForAttack();
+        StartCoroutine(coroutine);
+    }
+
+    private void Bomba()
+    {
+        Instantiate(bomb, shootPoint.position, Quaternion.identity).GetComponent<BombMove>().updateSpriteRenderer(ItemAssets.Instance.holdBombSprite);
+
+        canAttack = false;
+        IEnumerator coroutine = waitForAttack();
+        StartCoroutine(coroutine);
     }
 
     private void OnDrawGizmosSelected()

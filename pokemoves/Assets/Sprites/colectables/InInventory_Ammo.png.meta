@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 1bd43fe66cab4f347ae083ee801a2b15
+guid: d9841171bb2bc414a83c513ae89cfb77
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7183150183086966237
-    second: RangedAmmo_0
+      213: 670426298032829292
+    second: InInventory_Ammo_0
   - first:
-      213: 8560670237340560774
-    second: RangedAmmo_1
+      213: -5851207357123442423
+    second: InInventory_Ammo_1
+  - first:
+      213: -4722960837008186146
+    second: InInventory_Ammo_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,43 +96,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RangedAmmo_0
+      name: InInventory_Ammo_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 7
+        y: 24
         width: 24
-        height: 7
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd54e27980dafa360800000000000000
-      internalID: 7183150183086966237
+      spriteID: c63b35e7a25dd4900800000000000000
+      internalID: 670426298032829292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedAmmo_1
+      name: InInventory_Ammo_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 24
+        y: 24
         width: 24
-        height: 7
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68d61f7793c9dc670800000000000000
-      internalID: 8560670237340560774
+      spriteID: 9094183e8e55ccea0800000000000000
+      internalID: -5851207357123442423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InInventory_Ammo_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4ab0e542ca47eb0800000000000000
+      internalID: -4722960837008186146
       vertices: []
       indices: 
       edges: []

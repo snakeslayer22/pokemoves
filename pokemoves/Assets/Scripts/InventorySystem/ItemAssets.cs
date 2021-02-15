@@ -31,4 +31,8 @@ public class ItemAssets : MonoBehaviour{
 
 
     public Sprite lookTarget;
+
+    public Sprite arrowSprite;
+    public Sprite magicSprite;
+    public Sprite bulletSprite;
 }

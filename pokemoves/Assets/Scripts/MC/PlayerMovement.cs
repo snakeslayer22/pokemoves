@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool ableToMove = true;
 
+    private bool cantMoveCusM = false;
+
     public static Inventory inventory;
     [SerializeField] UI_Inventory uiInventory;
 
@@ -28,6 +30,8 @@ public class PlayerMovement : MonoBehaviour {
     private Transform MemoryBoxesBoxesBox;
     private bool MemoryBoxesDown = false;
     private Animator MemoryBoxesAnimator;
+
+    private Transform shootPoint;
 
     void Start()
     {
@@ -43,6 +47,8 @@ public class PlayerMovement : MonoBehaviour {
         MemoryBoxesPanel = GameObject.Find("MemoryBoxesPanel").transform;
         MemoryBoxesBoxesBox = GameObject.Find("MemoryBoxesBoxesBox").transform;
         MemoryBoxesAnimator = MemoryBoxesBoxesBox.GetComponent<Animator>();
+
+        shootPoint = GameObject.Find("ShootPoint").transform;
     }
 
     private void Awake() 
@@ -165,31 +171,49 @@ public class PlayerMovement : MonoBehaviour {
                 ArmsAnimator.SetBool("Holding", false);
                 BodyAnimator.SetBool("Holding", false);
                 holdPointSpriteRenderer.sprite = null;
-            }
+                shootPoint.GetComponent<SpriteRenderer>().sprite = null;
 
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                if (!MemoryBoxesDown)
-                {
-                    MemoryBoxesPanel.localPosition = Vector3.zero;
-                    MemoryBoxesAnimator.SetBool("IsDown", true);
-
-                    MemoryBoxesDown = true;
-                }
-                else
-                {
-                    IEnumerator coroutine = WaitHalfASecond();
-                    StartCoroutine(coroutine);
-                    MemoryBoxesAnimator.SetBool("IsDown", false);
-
-                    MemoryBoxesDown = false;
-                }
+                Attack.MCAttackRange = 0;
             }
         }
         else
         {
             movement.x = 0;
             movement.y = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (!MemoryBoxesDown)
+            {
+                MemoryBoxesPanel.localPosition = Vector3.zero;
+                MemoryBoxesAnimator.SetBool("IsDown", true);
+
+                MemoryBoxesDown = true;
+
+                cantMoveCusM = true;
+
+                if (ableToMove == false)
+                {
+                    cantMoveCusM = false;
+                }
+
+                ableToMove = false;
+            }
+            else
+            {
+                IEnumerator coroutine = WaitHalfASecond();
+                StartCoroutine(coroutine);
+                MemoryBoxesAnimator.SetBool("IsDown", false);
+
+                MemoryBoxesDown = false;
+
+                if (cantMoveCusM)
+                {
+                    ableToMove = true;
+                    cantMoveCusM = false;
+                }
+            }
         }
 
         BodyAnimator.SetFloat("HorizontalSpeed", movement.x);
